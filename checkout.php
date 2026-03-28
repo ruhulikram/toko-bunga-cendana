@@ -1,0 +1,421 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Toko Bunga Cendana</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- CSS
+	============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/font.awesome.min.css">
+    <!-- Linear Icons CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/linearicons.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <!-- Jquery ui CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Header Area Start Here -->
+    <header class="main-header-area">
+        <!-- Main Header Area Start -->
+        <div class="main-header header-transparent header-sticky">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-xl-2 col-md-6 col-6 col-custom">
+                    </div>
+                    <div class="col-lg-8 d-none d-lg-flex justify-content-center col-custom">
+                        <nav class="main-nav d-none d-lg-flex">
+                            <ul class="nav">
+                                <li><a href="index.html"><span class="menu-text">Home</span></a></li>
+                                <li><a href="shop.html"><span class="menu-text">Shop</span></a></li>
+                                <li><a href="about-us.html"><span class="menu-text">About Us</span></a></li>
+                                <li><a href="contact-us.html"><span class="menu-text">Contact Us</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-6 col-custom">
+                        <div class="header-right-area main-nav">
+                            <ul class="nav">
+                                <li class="minicart-wrap">
+                                    <a href="#" class="minicart-btn toolbar-btn">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <!-- <span class="cart-item_count">3</span> -->
+                                    </a>
+                                </li>
+                                <li class="sidemenu-wrap">
+                                    <a href="#"><i class="fa fa-search"></i> </a>
+                                    <ul class="dropdown-sidemenu dropdown-hover-2 dropdown-search">
+                                        <li>
+                                            <form action="#">
+                                                <input name="search" id="search" placeholder="Search" type="text">
+                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="account-menu-wrap d-none d-lg-flex">
+                                    <a href="#" class="off-canvas-menu-btn">
+                                        <i class="fa fa-bars"></i>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu-btn d-lg-none">
+                                    <a class="off-canvas-btn" href="#">
+                                        <i class="fa fa-bars"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Main Header Area End -->
+        <!-- off-canvas menu start -->
+        <aside class="off-canvas-wrapper" id="mobileMenu">
+            <div class="off-canvas-overlay"></div>
+            <div class="off-canvas-inner-content">
+                <div class="btn-close-off-canvas">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="off-canvas-inner">
+                    <div class="search-box-offcanvas">
+                        <form>
+                            <input type="text" placeholder="Search product...">
+                            <button class="search-btn"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <!-- mobile menu start -->
+                    <div class="mobile-navigation">
+                        <!-- mobile menu navigation start -->
+                        <nav>
+                            <ul class="mobile-menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                        <!-- mobile menu navigation end -->
+                    </div>
+                    <!-- mobile menu end -->
+                    <div class="offcanvas-widget-area">
+                        <div class="switcher">
+                            <div class="language">
+                                <span class="switcher-title">Language: </span>
+                                <div class="switcher-menu">
+                                    <ul>
+                                        <li><a href="#">English</a>
+                                            <ul class="switcher-dropdown">
+                                                <li><a href="#">German</a></li>
+                                                <li><a href="#">French</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="currency">
+                                <span class="switcher-title">Currency: </span>
+                                <div class="switcher-menu">
+                                    <ul>
+                                        <li><a href="#">IDR</a>
+                                            <ul class="switcher-dropdown">
+                                                <li><a href="#">€ EUR</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-info-wrap text-left text-black">
+                            <ul class="address-info">
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <a href="info%40yourdomain.html">0812802022</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="info%40yourdomain.html">info@yourdomain.com</a>
+                                </li>
+                            </ul>
+                            <div class="widget-social">
+                                <a class="facebook-color-bg" title="Facebook-f" href="#"><i class="fa fa-facebook-f"></i></a>
+                                <a class="twitter-color-bg" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                <a class="linkedin-color-bg" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                <a class="youtube-color-bg" title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
+                                <a class="vimeo-color-bg" title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- off-canvas menu end -->
+        <!-- off-canvas menu start -->
+        <aside class="off-canvas-menu-wrapper" id="sideMenu">
+            <div class="off-canvas-overlay"></div>
+            <div class="off-canvas-inner-content">
+                <div class="off-canvas-inner">
+                    <div class="btn-close-off-canvas">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <!-- offcanvas widget area start -->
+                    <div class="offcanvas-widget-area">
+                        <ul class="menu-top-menu">
+                            <li><a href="about-us.html">Tentang Kami</a></li>
+                        </ul>
+                        <p class="desc-content">Kami menyediakan berbagai bunga yang indah <br> Dengan harga yang
+                            bersaing dengan toko yang lain <br> Bunga yang masih segar dan tahan lama.</p>
+                        <div class="switcher">
+                            <div class="language">
+                                <span class="switcher-title">Bahasa : </span>
+                                <div class="switcher-menu">
+                                    <ul>
+                                        <li><a href="#">Indonesia</a>
+                                            <ul class="switcher-dropdown">
+                                                <li><a href="#">English</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="currency">
+                                <span class="switcher-title">Currency: </span>
+                                <div class="switcher-menu">
+                                    <ul>
+                                        <li><a href="#">Rp IDR</a>
+                                            <ul class="switcher-dropdown">
+                                                <li><a href="#"> $ Dollar </a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-info-wrap text-left text-black">
+                            <ul class="address-info">
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <a href="info%40yourdomain.html">081382920920</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="info%40yourdomain.html">tokobunga@gmail.com</a>
+                                </li>
+                            </ul>
+                            <div class="widget-social">
+                                <a class="facebook-color-bg" title="Facebook-f" href="#"><i class="fa fa-facebook-f"></i></a>
+                                <a class="twitter-color-bg" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
+                                <a class="linkedin-color-bg" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                                <a class="youtube-color-bg" title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
+                                <a class="vimeo-color-bg" title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- offcanvas widget area end -->
+                </div>
+            </div>
+        </aside>
+        <!-- off-canvas menu end -->
+        </div>
+        </div>
+        </aside>
+        <!-- off-canvas menu end -->
+    </header>
+    <!-- Header Area End Here -->
+    <!-- Breadcrumb Area Start Here -->
+    <div class="breadcrumbs-area position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="breadcrumb-content position-relative section-content">
+                        <h3 class="title-3">Checkout</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Checkout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End Here -->
+    <!-- Checkout Area Start Here -->
+    <div class="checkout-area mt-no-text">
+        <div class="container custom-container">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-12 col-custom">
+                    <div class="your-order">
+                        <h3>Pesanan Anda</h3>
+                        <div class="your-order-table table-responsive">
+                            <table class="table">
+                                <?php
+                                    // Define the product information in an array
+                                $products = [
+                                    'A' => [
+                                        'name' => 'Jasmine Putih',
+                                        'harga' => 93000,
+                                        'total' => isset($_POST['totalA']) ? $_POST['totalA'] : 0,
+                                    ],
+                                    'B' => [
+                                        'name' => 'Anggrek Orange',
+                                        'harga' => 93000,
+                                        'total' => isset($_POST['totalB']) ? $_POST['totalB'] : 0,
+                                    ],
+                                    'C' => [
+                                        'name' => 'Daisy Merah',
+                                        'harga' => 130000,
+                                        'total' => isset($_POST['totalC']) ? $_POST['totalC'] : 0,
+                                    ],
+                                    'D' => [
+                                        'name' => 'Buket Rose Merah',
+                                        'harga' => 130000,
+                                        'total' => isset($_POST['totalD']) ? $_POST['totalD'] : 0,
+                                    ],
+                                ];
+
+                                // Calculate the total price for each product and the overall total price
+                                $hargaTotal = 0;
+                                foreach ($products as $key => $product) {
+                                    $product['hargaTotal'] = $product['total'] * $product['harga'];
+                                    $products[$key] = $product;
+                                    $hargaTotal += $product['hargaTotal'];
+                                }
+                                ?>
+                                
+                                <thead>
+                                    <tr>
+                                        <th class="cart-product-name">Product</th>
+                                        <th class="cart-product-total">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($products as $product) { ?>
+                                        <?php if ($product['total']) { ?>
+                                            <tr class="cart_item">
+                                                <td class="cart-product-name">
+                                                    <?php echo $product['name']; ?>
+                                                    <strong class="product-quantity"> × <?php echo $product['total']; ?></strong>
+                                                </td>
+                                                <td class="cart-product-total text-center">
+                                                    <span class="amount"><?php echo number_format($product['hargaTotal']); ?></span>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="cart-subtotal">
+                                        <th>Cart Subtotal</th>
+                                        <td class="text-center"><span class="amount"><?php echo number_format($hargaTotal) . ' IDR'; ?></span></td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Order Total</th>
+                                        <td class="text-center"><strong><span class="amount"><?php echo number_format($hargaTotal) . ' IDR'; ?></span></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="payment-method">
+                            <div class="payment-accordion">
+                                <div id="accordion">
+                                    <div class="card">
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                                $waText = "Halo Toko Bunga Cendana,%0A%0ASaya ingin memesan:%0A";
+                                foreach ($products as $product) {
+                                    if ($product['total'] > 0) {
+                                        $waText .= "- " . $product['name'] . " (" . $product['total'] . "x) = Rp " . number_format($product['hargaTotal']) . "%0A";
+                                    }
+                                }
+                                $waText .= "%0ATotal Harga: Rp " . number_format($hargaTotal) . "%0A%0AMohon informasi lebih lanjut mengenai proses pembayaran dan pengiriman. Terima kasih!";
+                                $waLink = "https://wa.me/6281382920920?text=" . $waText;
+                            ?>
+                            <div class="order-button-payment">
+                                <a href="<?php echo $waLink; ?>" target="_blank" class="btn flosun-button primary-btn rounded-0 black-btn w-100" style="background-color: #25D366; color: white; border-color: #25D366;"><i class="fa fa-whatsapp"></i> Hubungi Kami Untuk Memesan Via WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Checkout Area End Here -->
+    <!--Footer Area Start-->
+    <br></br>
+    <footer class="footer-area">
+        <div class="footer-copyright-area">
+            <div class="container custom-area">
+                <div class="row">
+                    <div class="col-12 text-center col-custom">
+                        <div class="copyright-content">
+                            <p>Copyright © 2023 Toko Bunga Cendana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer Area End-->
+
+    <!-- JS
+============================================ -->
+
+
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Migrate JS -->
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <!-- Modernizer JS -->
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Swiper Slider JS -->
+    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
+    <!-- nice select JS -->
+    <script src="assets/js/plugins/nice-select.min.js"></script>
+    <!-- Ajaxchimpt js -->
+    <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+    <!-- Jquery Ui js -->
+    <script src="assets/js/plugins/jquery-ui.min.js"></script>
+    <!-- Jquery Countdown js -->
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <!-- jquery magnific popup js -->
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
