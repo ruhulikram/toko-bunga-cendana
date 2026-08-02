@@ -156,11 +156,11 @@
                             <ul class="address-info">
                                 <li>
                                     <i class="fa fa-phone"></i>
-                                    <a href="info%40yourdomain.html">0812 2456 012</a>
+                                     <a href="tel:+6281382920920">081382920920</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>
-                                    <a href="info%40yourdomain.html">info@yourdomain.com</a>
+                                    <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
                                 </li>
                             </ul>
                             <div class="widget-social">
@@ -221,11 +221,11 @@
                             <ul class="address-info">
                                 <li>
                                     <i class="fa fa-phone"></i>
-                                    <a href="info%40yourdomain.html">081382920920</a>
+                                     <a href="tel:+6281382920920">081382920920</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>
-                                    <a href="info%40yourdomain.html">tokobunga@gmail.com</a>
+                                     <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
                                 </li>
                             </ul>
                             <div class="widget-social">
@@ -240,10 +240,6 @@
                     <!-- offcanvas widget area end -->
                 </div>
             </div>
-        </aside>
-        <!-- off-canvas menu end -->
-        </div>
-        </div>
         </aside>
         <!-- off-canvas menu end -->
     </header>
@@ -291,8 +287,6 @@
                                             <div class="quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="0" type="text" name="totalA">
-                                                    <div class="dec qtybutton">-</div>
-                                                    <div class="inc qtybutton">+</div>
                                                     <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
                                                     <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
                                                 </div>
@@ -307,8 +301,6 @@
                                             <div class="quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="0" type="text" name="totalB">
-                                                    <div class="dec qtybutton">-</div>
-                                                    <div class="inc qtybutton">+</div>
                                                     <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
                                                     <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
                                                 </div>
@@ -323,8 +315,6 @@
                                             <div class="quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="0" type="text" name="totalC">
-                                                    <div class="dec qtybutton">-</div>
-                                                    <div class="inc qtybutton">+</div>
                                                     <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
                                                     <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
                                                 </div>
@@ -339,8 +329,6 @@
                                             <div class="quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" value="2" type="text" name="totalD">
-                                                    <div class="dec qtybutton">-</div>
-                                                    <div class="inc qtybutton">+</div>
                                                     <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
                                                     <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
                                                 </div>

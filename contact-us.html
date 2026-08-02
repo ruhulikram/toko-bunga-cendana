@@ -139,12 +139,12 @@
                         <ul class="address-info">
                             <li>
                                 <i class="fa fa-phone"></i>
-                                <a href="info%40yourdomain.html">0813938393</a>
+                                <a href="tel:+6281382920920">081382920920</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
                                 <br>
-                                <a href="info%40yourdomain.html">tokobungacendana@gmail.com</a>
+                                <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
                             </li>
                         </ul>
                         <div class="widget-social">
@@ -206,11 +206,11 @@
                         <ul class="address-info">
                             <li>
                                 <i class="fa fa-phone"></i>
-                                <a href="info%40yourdomain.html">081382920920</a>
+                                <a href="tel:+6281382920920">081382920920</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                <a href="info%40yourdomain.html">tokobunga@gmail.com</a>
+                                <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
                             </li>
                         </ul>
                         <div class="widget-social">
@@ -257,8 +257,8 @@
                             <i class="lnr lnr-map-marker"></i>
                         </div>
                         <div class="con-info-txt">
-                            <h4>Our Location</h4>
-                            <p>0812 123 456 789 / (800) 123 456 789 info@example.com</p>
+                            <h4>Alamat Kami</h4>
+                            <p>Jl. Cendana No. 12, Kota Bandung,<br>Jawa Barat, Indonesia</p>
                         </div>
                     </div>
                 </div>
@@ -268,8 +268,8 @@
                             <i class="lnr lnr-smartphone"></i>
                         </div>
                         <div class="con-info-txt">
-                            <h4>Contact us Anytime</h4>
-                            <p>Mobile: 0812 345 678<br>Fax: 123 456 789</p>
+                            <h4>Hubungi Kami</h4>
+                            <p>WhatsApp / Telepon: <strong>081382920920</strong><br>Buka: Senin–Sabtu, 08.00–17.00 WIB</p>
                         </div>
                     </div>
                 </div>
@@ -279,15 +279,45 @@
                             <i class="lnr lnr-envelope"></i>
                         </div>
                         <div class="con-info-txt">
-                            <h4>Support Overall</h4>
-                            <p>Support24/7@example.com <br> tokobung@example.com</p>
+                            <h4>Email Kami</h4>
+                            <p>tokobungacendana@gmail.com<br>Respon dalam 1x24 jam kerja</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-custom">
-                    <form method="post" action="http://whizthemes.com/mail-php/reza/flosun/mail.php" id="contact-form" accept-charset="UTF-8" class="contact-form">
+                    <form id="contact-form" class="contact-form" onsubmit="return false;">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="contact-name">Nama Lengkap <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="contact-email">Email <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="email" class="form-control" placeholder="Masukkan email Anda" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="contact-subject">Subjek</label>
+                                <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="Subjek pesan">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <label for="contact-message">Pesan <span class="required">*</span></label>
+                                <textarea id="contact-message" name="message" class="form-control" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn flosun-button primary-btn rounded-0 black-btn"
+                                    onclick="var n=document.getElementById('contact-name').value, e=document.getElementById('contact-email').value, s=document.getElementById('contact-subject').value, m=document.getElementById('contact-message').value; if(n&&e&&m){var wa='https://wa.me/6281382920920?text=Halo%20Toko%20Bunga%20Cendana,%0A%0ANama:%20'+encodeURIComponent(n)+'%0AEmail:%20'+encodeURIComponent(e)+'%0ASubjek:%20'+encodeURIComponent(s)+'%0APesan:%20'+encodeURIComponent(m); window.open(wa,'_blank');}">
+                                    <i class="fa fa-whatsapp"></i> Kirim Pesan via WhatsApp
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

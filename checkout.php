@@ -153,11 +153,11 @@
                             <ul class="address-info">
                                 <li>
                                     <i class="fa fa-phone"></i>
-                                    <a href="info%40yourdomain.html">0812802022</a>
+                                    <a href="tel:+6281382920920">081382920920</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>
-                                    <a href="info%40yourdomain.html">info@yourdomain.com</a>
+                                    <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
                                 </li>
                             </ul>
                             <div class="widget-social">
@@ -218,11 +218,11 @@
                             <ul class="address-info">
                                 <li>
                                     <i class="fa fa-phone"></i>
-                                    <a href="info%40yourdomain.html">081382920920</a>
+                                    <a href="tel:+6281382920920">081382920920</a>
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>
-                                    <a href="info%40yourdomain.html">tokobunga@gmail.com</a>
+                                    <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
                                 </li>
                             </ul>
                             <div class="widget-social">
