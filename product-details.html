@@ -413,12 +413,6 @@
                                     <i class="fa fa-whatsapp"></i> Pesan via WhatsApp
                                 </button>
 
-                                <!-- Wishlist -->
-                                <a href="wishlist.html"
-                                   class="btn-wishlist-icon"
-                                   title="Tambah ke Wishlist">
-                                    <i class="fa fa-heart-o"></i> Wishlist
-                                </a>
                             </div>
                         </div>
 
@@ -801,17 +795,6 @@
             window.open(url, '_blank');
         });
 
-        // ── Wishlist button feedback ──────────────────────────────
-        $('a[href="wishlist.html"].btn-wishlist-icon').on('click', function (e) {
-            e.preventDefault();
-            var $btn = $(this);
-            $btn.find('i').removeClass('fa-heart-o').addClass('fa-heart');
-            $btn.css({ background: '#e74c3c', borderColor: '#e74c3c', color: '#fff' });
-            showToast('\u2665 ' + PRODUCT_NAME + ' ditambahkan ke Wishlist!');
-            setTimeout(function () {
-                window.location.href = 'wishlist.html';
-            }, 1600);
-        });
 
     }());
     </script>
