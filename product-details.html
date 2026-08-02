@@ -399,9 +399,9 @@
 
                             <!-- Action Buttons -->
                             <div class="product-action-wrap">
-                                <!-- Add to Cart: redirect to cart page -->
+                                <!-- Add to Cart: simpan ke localStorage lalu redirect -->
                                 <a id="btn-add-cart"
-                                   href="cart.php"
+                                   href="cart.html"
                                    class="btn product-cart button-icon flosun-button dark-btn">
                                     <i class="fa fa-shopping-cart"></i> Tambah ke Cart
                                 </a>
@@ -771,14 +771,33 @@
         }
 
         // ── Add to Cart button ───────────────────────────────────
-        // Shows a toast confirmation first, then navigates to cart.php
+        // Simpan produk ke localStorage, tampilkan toast, lalu redirect ke cart.html
         $('#btn-add-cart').on('click', function (e) {
             e.preventDefault();
             var qty   = getQty();
             var total = formatRp(qty * PRODUCT_PRICE);
-            showToast('\uD83D\uDED2 ' + PRODUCT_NAME + ' \u00D7' + qty + ' \u2014 ' + total);
+
+            // Baca cart yang sudah ada
+            var cart = JSON.parse(localStorage.getItem('cendana_cart') || '[]');
+
+            // Cek apakah produk sudah ada di cart
+            var existing = cart.find(function (item) { return item.id === 'ROSE-001'; });
+            if (existing) {
+                existing.qty += qty;
+            } else {
+                cart.push({
+                    id    : 'ROSE-001',
+                    name  : PRODUCT_NAME,
+                    price : PRODUCT_PRICE,
+                    qty   : qty,
+                    image : 'assets/images/product/small-size/1.jpg'
+                });
+            }
+            localStorage.setItem('cendana_cart', JSON.stringify(cart));
+
+            showToast('\uD83D\uDED2 ' + PRODUCT_NAME + ' \u00D7' + qty + ' \u2014 ' + total + ' ditambahkan!');
             setTimeout(function () {
-                window.location.href = 'cart.php';
+                window.location.href = 'cart.html';
             }, 1500);
         });
 
