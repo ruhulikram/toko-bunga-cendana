@@ -1,0 +1,38 @@
+# ─── OS & Editor ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# ─── Python (scripts/) ───────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.env
+venv/
+env/
+
+# ─── PHP / Server ────────────────────────────────────────────
+# Uncomment if using Composer
+# vendor/
+# composer.lock
+
+# XAMPP / Laragon logs
+*.log
+error_log
+
+# ─── Temporary & Build Files ─────────────────────────────────
+*.tmp
+*.bak
+*.swp
+*.swo
+~$*
