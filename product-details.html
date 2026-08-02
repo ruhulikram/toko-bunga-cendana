@@ -87,12 +87,47 @@
             background: #333;
             color: #fff;
             padding: 14px 22px;
-            border-radius: 6px;
+            border-radius: 12px;
             font-size: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,.18);
             animation: fadeInUp .3s ease;
+            min-width: 300px;
+            max-width: 360px;
         }
         #cart-toast.show { display: block; }
+        #cart-toast .toast-product { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+        #cart-toast .toast-sub { font-size: 12px; color: #bbb; margin-bottom: 12px; }
+        #cart-toast .toast-actions { display: flex; gap: 8px; }
+        #cart-toast .toast-btn-view {
+            flex: 1; background: #fff; color: #333;
+            border: none; padding: 8px; border-radius: 6px;
+            font-size: 13px; font-weight: 700; cursor: pointer;
+            text-align: center; text-decoration: none; display: block;
+        }
+        #cart-toast .toast-btn-view:hover { background: #f0f0f0; color: #333; }
+        #cart-toast .toast-btn-close {
+            flex: 1; background: transparent; color: #aaa;
+            border: 1px solid #555; padding: 8px; border-radius: 6px;
+            font-size: 13px; cursor: pointer;
+        }
+        #cart-toast .toast-btn-close:hover { color: #fff; border-color: #aaa; }
+        /* Cart badge in navbar */
+        .nav-cart-badge {
+            position: absolute;
+            top: -6px; right: -8px;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .minicart-wrap { position: relative; }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -139,8 +174,9 @@
                         <div class="header-right-area main-nav">
                             <ul class="nav">
                                 <li class="minicart-wrap">
-                                    <a href="cart.php" class="minicart-btn toolbar-btn">
+                                    <a href="cart.html" class="minicart-btn toolbar-btn" style="position:relative;">
                                         <i class="fa fa-shopping-cart"></i>
+                                        <span id="nav-cart-badge" class="nav-cart-badge">0</span>
                                     </a>
                                 </li>
                                 <li class="sidemenu-wrap">
@@ -770,17 +806,45 @@
             setTimeout(function () { $t.removeClass('show'); }, 2500);
         }
 
+        // ── Navbar cart badge ───────────────────────────────────
+        function updateBadge() {
+            var cart  = JSON.parse(localStorage.getItem('cendana_cart') || '[]');
+            var count = cart.reduce(function (s, i) { return s + i.qty; }, 0);
+            var $b    = $('#nav-cart-badge');
+            if (count > 0) { $b.text(count).css('display', 'flex'); }
+            else           { $b.hide(); }
+        }
+        updateBadge(); // run on page load
+
+        // ── Rich toast: shown after add-to-cart (no redirect) ────
+        function showCartToast(productName, qty, totalStr) {
+            var $t = $('#cart-toast');
+            $t.html(
+                '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">'
+              +   '<i class="fa fa-check-circle" style="color:#4caf50;font-size:22px;"></i>'
+              +   '<div>'
+              +     '<div class="toast-product">' + productName + '</div>'
+              +     '<div class="toast-sub">' + qty + ' item · ' + totalStr + ' ditambahkan</div>'
+              +   '</div>'
+              + '</div>'
+              + '<div class="toast-actions">'
+              +   '<a href="cart.html" class="toast-btn-view">🛒 Lihat Keranjang</a>'
+              +   '<button class="toast-btn-close" onclick="$(\"#cart-toast\").removeClass(\"show\")">&times; Lanjut Belanja</button>'
+              + '</div>'
+            );
+            $t.addClass('show');
+            clearTimeout(window._toastTimer);
+            window._toastTimer = setTimeout(function () { $t.removeClass('show'); }, 6000);
+        }
+
         // ── Add to Cart button ───────────────────────────────────
-        // Simpan produk ke localStorage, tampilkan toast, lalu redirect ke cart.html
+        // Simpan ke localStorage, tampilkan rich toast, TIDAK redirect otomatis
         $('#btn-add-cart').on('click', function (e) {
             e.preventDefault();
             var qty   = getQty();
             var total = formatRp(qty * PRODUCT_PRICE);
 
-            // Baca cart yang sudah ada
             var cart = JSON.parse(localStorage.getItem('cendana_cart') || '[]');
-
-            // Cek apakah produk sudah ada di cart
             var existing = cart.find(function (item) { return item.id === 'ROSE-001'; });
             if (existing) {
                 existing.qty += qty;
@@ -795,10 +859,8 @@
             }
             localStorage.setItem('cendana_cart', JSON.stringify(cart));
 
-            showToast('\uD83D\uDED2 ' + PRODUCT_NAME + ' \u00D7' + qty + ' \u2014 ' + total + ' ditambahkan!');
-            setTimeout(function () {
-                window.location.href = 'cart.html';
-            }, 1500);
+            updateBadge();                        // update navbar badge
+            showCartToast(PRODUCT_NAME, qty, total); // tampilkan rich notification
         });
 
         // ── WhatsApp Direct Order button ─────────────────────────
