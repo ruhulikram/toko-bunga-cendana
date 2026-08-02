@@ -3,15 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Toko Bunga Cendana</title>
+    <title>Buket Rose Merah – Toko Bunga Cendana</title>
     <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
+    <meta name="description" content="Buket bunga mawar merah segar dari Toko Bunga Cendana, cocok untuk momen spesial seperti ulang tahun, pernikahan, atau hari Valentine.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-    <!-- CSS
-	============================================ -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <!-- Font Awesome CSS -->
@@ -28,21 +25,106 @@
     <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css">
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
-
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* ── Action Button Enhancements ── */
+        .product-action-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .btn-whatsapp-order {
+            background-color: #25D366;
+            color: #fff !important;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: background-color .2s ease;
+        }
+        .btn-whatsapp-order:hover { background-color: #1ebe5e; color: #fff; }
 
+        .btn-wishlist-icon {
+            background: transparent;
+            border: 2px solid #333;
+            color: #333;
+            padding: 9px 18px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all .2s ease;
+        }
+        .btn-wishlist-icon:hover { background: #333; color: #fff; }
+
+        /* Qty input wrapper */
+        .qty-action-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Toast notification */
+        #cart-toast {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background: #333;
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: 6px;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.2);
+            animation: fadeInUp .3s ease;
+        }
+        #cart-toast.show { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stock badge */
+        .stock-badge {
+            display: inline-block;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .product-sku {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 6px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header Area Start Here -->
     <header class="main-header-area">
-        <!-- Main Header Area Start -->
         <div class="main-header header-transparent header-sticky">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-xl-2 col-md-6 col-6 col-custom">
-                    </div>
+                    <div class="col-lg-2 col-xl-2 col-md-6 col-6 col-custom"></div>
                     <div class="col-lg-8 d-none d-lg-flex justify-content-center col-custom">
                         <nav class="main-nav d-none d-lg-flex">
                             <ul class="nav">
@@ -57,13 +139,12 @@
                         <div class="header-right-area main-nav">
                             <ul class="nav">
                                 <li class="minicart-wrap">
-                                    <a href="#" class="minicart-btn toolbar-btn">
+                                    <a href="cart.php" class="minicart-btn toolbar-btn">
                                         <i class="fa fa-shopping-cart"></i>
-                                        <!-- <span class="cart-item_count">3</span> -->
                                     </a>
                                 </li>
                                 <li class="sidemenu-wrap">
-                                    <a href="#"><i class="fa fa-search"></i> </a>
+                                    <a href="#"><i class="fa fa-search"></i></a>
                                     <ul class="dropdown-sidemenu dropdown-hover-2 dropdown-search">
                                         <li>
                                             <form action="#">
@@ -74,14 +155,10 @@
                                     </ul>
                                 </li>
                                 <li class="account-menu-wrap d-none d-lg-flex">
-                                    <a href="#" class="off-canvas-menu-btn">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
+                                    <a href="#" class="off-canvas-menu-btn"><i class="fa fa-bars"></i></a>
                                 </li>
                                 <li class="mobile-menu-btn d-lg-none">
-                                    <a class="off-canvas-btn" href="#">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
+                                    <a class="off-canvas-btn" href="#"><i class="fa fa-bars"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -89,15 +166,11 @@
                 </div>
             </div>
         </div>
-        </div>
-        <!-- Main Header Area End -->
-        <!-- off-canvas menu start -->
+        <!-- off-canvas mobile menu start -->
         <aside class="off-canvas-wrapper" id="mobileMenu">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-inner-content">
-                <div class="btn-close-off-canvas">
-                    <i class="fa fa-times"></i>
-                </div>
+                <div class="btn-close-off-canvas"><i class="fa fa-times"></i></div>
                 <div class="off-canvas-inner">
                     <div class="search-box-offcanvas">
                         <form>
@@ -105,9 +178,7 @@
                             <button class="search-btn"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
-                    <!-- mobile menu start -->
                     <div class="mobile-navigation">
-                        <!-- mobile menu navigation start -->
                         <nav>
                             <ul class="mobile-menu">
                                 <li><a href="index.html">Home</a></li>
@@ -116,16 +187,14 @@
                                 <li><a href="contact-us.html">Contact Us</a></li>
                             </ul>
                         </nav>
-                        <!-- mobile menu navigation end -->
                     </div>
-                    <!-- mobile menu end -->
                     <div class="offcanvas-widget-area">
                         <div class="switcher">
                             <div class="language">
                                 <span class="switcher-title">Bahasa: </span>
                                 <div class="switcher-menu">
                                     <ul>
-                                        <li><a href="#">indonesia</a>
+                                        <li><a href="#">Indonesia</a>
                                             <ul class="switcher-dropdown">
                                                 <li><a href="#">English</a></li>
                                             </ul>
@@ -136,45 +205,31 @@
                         </div>
                         <div class="top-info-wrap text-left text-black">
                             <ul class="address-info">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                     <a href="tel:+6281382920920">081382920920</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <br>
-                                     <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
-                                </li>
+                                <li><i class="fa fa-phone"></i> <a href="tel:+6281382920920">081382920920</a></li>
+                                <li><i class="fa fa-envelope"></i> <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a></li>
                             </ul>
                             <div class="widget-social">
-                                <a class="facebook-color-bg" title="Facebook-f" href="#"><i
-                                        class="fa fa-facebook-f"></i></a>
+                                <a class="facebook-color-bg" title="Facebook" href="#"><i class="fa fa-facebook-f"></i></a>
                                 <a class="twitter-color-bg" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                <a class="linkedin-color-bg" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                <a class="youtube-color-bg" title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
-                                <a class="vimeo-color-bg" title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
+                                <a class="linkedin-color-bg" title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a>
+                                <a class="youtube-color-bg" title="YouTube" href="#"><i class="fa fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </aside>
-        <!-- off-canvas menu end -->
-        <!-- off-canvas menu start -->
+        <!-- off-canvas sidebar menu start -->
         <aside class="off-canvas-menu-wrapper" id="sideMenu">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-inner-content">
                 <div class="off-canvas-inner">
-                    <div class="btn-close-off-canvas">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <!-- offcanvas widget area start -->
+                    <div class="btn-close-off-canvas"><i class="fa fa-times"></i></div>
                     <div class="offcanvas-widget-area">
                         <ul class="menu-top-menu">
                             <li><a href="about-us.html">Tentang Kami</a></li>
                         </ul>
-                        <p class="desc-content">Kami menyediakan berbagai buang yang indah <br> Dengan harga yang
-                            bersaing dengan toko yang lain <br> Bunga yang masih segar dan tahan lama.</p>
+                        <p class="desc-content">Kami menyediakan berbagai bunga yang indah <br> Dengan harga yang bersaing <br> Bunga segar dan tahan lama.</p>
                         <div class="switcher">
                             <div class="language">
                                 <span class="switcher-title">Bahasa : </span>
@@ -194,7 +249,7 @@
                                     <ul>
                                         <li><a href="#">Rp IDR</a>
                                             <ul class="switcher-dropdown">
-                                                <li><a href="#"> $ Dollar </a></li>
+                                                <li><a href="#">$ Dollar</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -203,119 +258,106 @@
                         </div>
                         <div class="top-info-wrap text-left text-black">
                             <ul class="address-info">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="tel:+6281382920920">081382920920</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a>
-                                </li>
+                                <li><i class="fa fa-phone"></i> <a href="tel:+6281382920920">081382920920</a></li>
+                                <li><i class="fa fa-envelope"></i> <a href="mailto:tokobungacendana@gmail.com">tokobungacendana@gmail.com</a></li>
                             </ul>
                             <div class="widget-social">
-                                <a class="facebook-color-bg" title="Facebook-f" href="#"><i
-                                        class="fa fa-facebook-f"></i></a>
+                                <a class="facebook-color-bg" title="Facebook" href="#"><i class="fa fa-facebook-f"></i></a>
                                 <a class="twitter-color-bg" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                <a class="linkedin-color-bg" title="Linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                                <a class="youtube-color-bg" title="Youtube" href="#"><i class="fa fa-youtube"></i></a>
-                                <a class="vimeo-color-bg" title="Vimeo" href="#"><i class="fa fa-vimeo"></i></a>
+                                <a class="linkedin-color-bg" title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a>
+                                <a class="youtube-color-bg" title="YouTube" href="#"><i class="fa fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
-                    <!-- offcanvas widget area end -->
                 </div>
             </div>
         </aside>
-        <!-- off-canvas menu end -->
+        <!-- off-canvas end -->
     </header>
     <!-- Header Area End Here -->
-    <!-- Breadcrumb Area Start Here -->
+
+    <!-- Breadcrumb Area -->
     <div class="breadcrumbs-area position-relative">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breadcrumb-content position-relative section-content">
-                        <h3 class="title-3">Product Details</h3>
+                        <h3 class="title-3">Detail Produk</h3>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li>Product Details</li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li>Buket Rose Merah</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Breadcrumb Area End Here -->
+    <!-- Breadcrumb Area End -->
+
     <!-- Single Product Main Area Start -->
     <div class="single-product-main-area">
         <div class="container container-default custom-area">
             <div class="row">
+                <!-- Product Gallery -->
                 <div class="col-lg-5 offset-lg-0 col-md-8 offset-md-2 col-custom">
                     <div class="product-details-img">
                         <div class="single-product-img swiper-container gallery-top popup-gallery">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <a class="w-100" href="assets/images/product/large-size/1.jpg">
-                                        <img class="w-100" src="assets/images/product/large-size/1.jpg" alt="Product">
+                                        <img class="w-100" src="assets/images/product/large-size/1.jpg" alt="Buket Rose Merah">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="w-100" href="assets/images/product/large-size/2.jpg">
-                                        <img class="w-100" src="assets/images/product/large-size/2.jpg" alt="Product">
+                                        <img class="w-100" src="assets/images/product/large-size/2.jpg" alt="Buket Rose Merah - Tampak 2">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="w-100" href="assets/images/product/large-size/3.jpg">
-                                        <img class="w-100" src="assets/images/product/large-size/3.jpg" alt="Product">
+                                        <img class="w-100" src="assets/images/product/large-size/3.jpg" alt="Buket Rose Merah - Tampak 3">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="w-100" href="assets/images/product/large-size/4.jpg">
-                                        <img class="w-100" src="assets/images/product/large-size/4.jpg" alt="Product">
+                                        <img class="w-100" src="assets/images/product/large-size/4.jpg" alt="Buket Rose Merah - Tampak 4">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="w-100" href="assets/images/product/large-size/5.jpg">
-                                        <img class="w-100" src="assets/images/product/large-size/5.jpg" alt="Product">
+                                        <img class="w-100" src="assets/images/product/large-size/5.jpg" alt="Buket Rose Merah - Tampak 5">
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a class="w-100" href="assets/images/product/large-size/6.jpg">
-                                        <img class="w-100" src="assets/images/product/large-size/6.jpg" alt="Product">
+                                        <img class="w-100" src="assets/images/product/large-size/6.jpg" alt="Buket Rose Merah - Tampak 6">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="single-product-thumb swiper-container gallery-thumbs">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="assets/images/product/small-size/1.jpg" alt="Product">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/product/small-size/2.jpg" alt="Product">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/product/small-size/3.jpg" alt="Product">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/product/small-size/4.jpg" alt="Product">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/product/small-size/5.jpg" alt="Product">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/product/small-size/6.jpg" alt="Product">
-                                </div>
+                                <div class="swiper-slide"><img src="assets/images/product/small-size/1.jpg" alt="Thumbnail 1"></div>
+                                <div class="swiper-slide"><img src="assets/images/product/small-size/2.jpg" alt="Thumbnail 2"></div>
+                                <div class="swiper-slide"><img src="assets/images/product/small-size/3.jpg" alt="Thumbnail 3"></div>
+                                <div class="swiper-slide"><img src="assets/images/product/small-size/4.jpg" alt="Thumbnail 4"></div>
+                                <div class="swiper-slide"><img src="assets/images/product/small-size/5.jpg" alt="Thumbnail 5"></div>
+                                <div class="swiper-slide"><img src="assets/images/product/small-size/6.jpg" alt="Thumbnail 6"></div>
                             </div>
-                            <!-- Add Arrows -->
                             <div class="swiper-button-next swiper-button-white"><i class="lnr lnr-arrow-right"></i></div>
                             <div class="swiper-button-prev swiper-button-white"><i class="lnr lnr-arrow-left"></i></div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Product Info & Actions -->
                 <div class="col-lg-7 col-custom">
                     <div class="product-summery position-relative">
+
+                        <!-- Product Head -->
                         <div class="product-head mb-3">
+                            <p class="product-sku">SKU: CBC-ROSE-001</p>
                             <h2 class="product-title">Buket Rose Merah</h2>
                             <div class="product-rating mb-2">
                                 <i class="fa fa-star"></i>
@@ -323,125 +365,178 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
+                                <small class="ml-2 text-muted">(1 ulasan)</small>
                             </div>
                         </div>
-                        <div class="price-box mb-4">
+
+                        <!-- Price -->
+                        <div class="price-box mb-3">
                             <span class="regular-price">Rp 130.000</span>
                             <span class="old-price"><del>Rp 150.000</del></span>
                         </div>
-                        <p class="desc-content mb-4">Buket bunga mawar merah segar yang disusun dengan indah, cocok untuk momen spesial seperti ulang tahun, pernikahan, atau hari Valentine. Dikemas dengan rapi menggunakan kertas premium.</p>
-                        <div class="quantity-with_btn mb-5">
-                            <div class="quantity d-inline-flex align-items-center mr-3">
+
+                        <!-- Stock Status -->
+                        <span class="stock-badge"><i class="fa fa-check-circle"></i> Stok Tersedia</span>
+
+                        <!-- Short Description -->
+                        <p class="desc-content mb-4">
+                            Buket bunga mawar merah segar yang disusun dengan indah. Cocok untuk momen spesial
+                            seperti ulang tahun, pernikahan, anniversary, atau hari Valentine. Dikemas rapi
+                            menggunakan kertas premium dan pita satín.
+                        </p>
+
+                        <!-- Quantity + Action Buttons -->
+                        <div class="qty-action-wrap mb-4">
+                            <!-- Quantity Selector (main.js auto-append +/- buttons) -->
+                            <div class="quantity">
                                 <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" value="1" type="text" name="qty">
-                                    <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
-                                    <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
+                                    <input id="product-qty"
+                                           class="cart-plus-minus-box"
+                                           value="1" type="text"
+                                           min="1" readonly>
                                 </div>
                             </div>
-                            <div class="add-to_cart d-inline-flex">
-                                <a class="btn product-cart button-icon flosun-button dark-btn" href="cart.php">Add to Cart</a>
-                                <a class="btn flosun-button secondary-btn secondary-border rounded-0 ml-2" href="wishlist.html">Wishlist</a>
+
+                            <!-- Action Buttons -->
+                            <div class="product-action-wrap">
+                                <!-- Add to Cart: redirect to cart page -->
+                                <a id="btn-add-cart"
+                                   href="cart.php"
+                                   class="btn product-cart button-icon flosun-button dark-btn">
+                                    <i class="fa fa-shopping-cart"></i> Tambah ke Cart
+                                </a>
+
+                                <!-- Pesan Langsung via WhatsApp -->
+                                <button id="btn-whatsapp"
+                                        class="btn-whatsapp-order"
+                                        type="button">
+                                    <i class="fa fa-whatsapp"></i> Pesan via WhatsApp
+                                </button>
+
+                                <!-- Wishlist -->
+                                <a href="wishlist.html"
+                                   class="btn-wishlist-icon"
+                                   title="Tambah ke Wishlist">
+                                    <i class="fa fa-heart-o"></i> Wishlist
+                                </a>
                             </div>
                         </div>
+
+                        <!-- Social Share -->
                         <div class="social-share mb-4">
-                            <span>Share :</span>
-                            <a href="#"><i class="fa fa-facebook-square facebook-color"></i></a>
-                            <a href="#"><i class="fa fa-twitter-square twitter-color"></i></a>
+                            <span>Bagikan :</span>
+                            <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank'); return false;">
+                                <i class="fa fa-facebook-square facebook-color"></i>
+                            </a>
+                            <a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Lihat+produk+ini:&url='+encodeURIComponent(window.location.href),'_blank'); return false;">
+                                <i class="fa fa-twitter-square twitter-color"></i>
+                            </a>
+                            <a href="#" onclick="window.open('https://wa.me/?text=Lihat+produk+Buket+Rose+Merah+di+Toko+Bunga+Cendana!','_blank'); return false;">
+                                <i class="fa fa-whatsapp" style="color:#25D366; font-size:20px;"></i>
+                            </a>
                         </div>
+
+                        <!-- Product Meta -->
+                        <div class="product-meta text-muted" style="font-size:13px; border-top:1px solid #eee; padding-top:12px;">
+                            <p><strong>Kategori:</strong> Buket Bunga Segar</p>
+                            <p><strong>Ketersediaan Pengiriman:</strong> Same-day (order sebelum pukul 12.00 WIB)</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+            <!-- Tab: Description & Reviews -->
             <div class="row mt-no-text">
                 <div class="col-lg-12 col-custom">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs" id="productTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active text-uppercase" id="home-tab" data-bs-toggle="tab" href="#connect-1" role="tab" aria-selected="true">Description</a>
+                            <a class="nav-link active text-uppercase" id="desc-tab"
+                               data-bs-toggle="tab" href="#tab-desc" role="tab">Deskripsi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase" id="profile-tab" data-bs-toggle="tab" href="#connect-2" role="tab" aria-selected="false">Reviews</a>
+                            <a class="nav-link text-uppercase" id="review-tab"
+                               data-bs-toggle="tab" href="#tab-review" role="tab">Ulasan</a>
                         </li>
                     </ul>
-                    <div class="tab-content mb-text" id="myTabContent">
-                        <div class="tab-pane fade show active" id="connect-1" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-content mb-text" id="productTabContent">
+                        <!-- Description Tab -->
+                        <div class="tab-pane fade show active" id="tab-desc" role="tabpanel">
                             <div class="desc-content">
-                                <p class="mb-3">Selamat datang di Cendana Florist, tempat di mana keindahan mekar dan keharuman bunga berkumpul untuk menyapa setiap momen istimewa dalam hidup Anda. Toko bunga kami tidak hanya sekadar toko, tetapi juga wadah di mana kecantikan alam dapat diakses dan dinikmati oleh semua.</p>
-                                <p>Dengan desain interior yang elegan dan atmosfer yang penuh kasih, Cendana Florist menawarkan pengalaman berbelanja bunga yang tak terlupakan. Dari rangkaian bunga segar yang dipilih dengan teliti hingga buket-buket kreatif yang disusun dengan seni, setiap kreasi kami mencerminkan keindahan dan keanggunan yang tak tertandingi.</p>
+                                <p class="mb-3">
+                                    Selamat datang di <strong>Cendana Florist</strong>, tempat di mana keindahan mekar dan
+                                    keharuman bunga berkumpul untuk menyapa setiap momen istimewa dalam hidup Anda.
+                                    Toko bunga kami tidak hanya sekadar toko, tetapi juga wadah di mana kecantikan
+                                    alam dapat diakses dan dinikmati oleh semua.
+                                </p>
+                                <p class="mb-3">
+                                    <strong>Buket Rose Merah</strong> ini terdiri dari 12–15 tangkai bunga mawar merah premium
+                                    yang dipilih dengan teliti setiap pagi dari kebun mitra kami. Bunga dijamin segar
+                                    dan tahan 5–7 hari dengan perawatan yang tepat.
+                                </p>
+                                <ul>
+                                    <li>✅ Bunga segar pilihan</li>
+                                    <li>✅ Dikemas kertas premium + pita satin</li>
+                                    <li>✅ Tersedia kartu ucapan gratis</li>
+                                    <li>✅ Same-day delivery (area Bandung)</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="connect-2" role="tabpanel" aria-labelledby="profile-tab">
-                            <!-- Start Single Content -->
-                            <div class="product_tab_content  border p-3">
+                        <!-- Reviews Tab -->
+                        <div class="tab-pane fade" id="tab-review" role="tabpanel">
+                            <div class="product_tab_content border p-3">
                                 <div class="review_address_inner">
-                                    <!-- Start Single Review -->
                                     <div class="pro_review mb-5">
                                         <div class="review_thumb">
-                                            <img alt="review images" src="assets/images/review/1.jpg">
+                                            <img alt="Romeo" src="assets/images/review/1.jpg">
                                         </div>
                                         <div class="review_details">
                                             <div class="review_info mb-2">
                                                 <div class="product-rating mb-2">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                 </div>
-                                                <h5>Romeo - <span> 20 Desember, 2023</span></h5>
+                                                <h5>Romeo — <span>20 Desember, 2023</span></h5>
                                             </div>
-                                            <p>Saya baru saja membeli bunga di toko ini untuk kekasih saya, bunganya terlihat sangat segar saya sangat suka karena pasangan saya sangat senang saat saya memberikannya. Terimkasih banyak untuk Cendana Florest semoga sukses !!!</p>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Review -->
-                                </div>
-                                <!-- Start RAting Area -->
-                                <div class="rating_wrap">
-                                    <h5 class="rating-title-1 font-weight-bold mb-2">Add a review </h5>
-                                    <p class="mb-2">Terimakasih kembali Romeo semoga hubungan anda dengan Juliet langgeng. *</p>
-                                    <h6 class="rating-title-2 mb-2">Your Rating</h6>
-                                    <div class="rating_list mb-4">
-                                        <div class="review_info">
-                                            <div class="product-rating mb-3">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
+                                            <p>Bunganya sangat segar dan cantik! Pasangan saya sangat senang saat saya memberikannya. Pengiriman juga tepat waktu. Terima kasih Cendana Florist! 🌹</p>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End RAting Area -->
+                                <!-- Review Form -->
+                                <div class="rating_wrap mb-3">
+                                    <h5 class="rating-title-1 font-weight-bold mb-2">Tulis Ulasan</h5>
+                                    <h6 class="rating-title-2 mb-2">Rating Anda</h6>
+                                    <div class="rating_list mb-3">
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="comments-area comments-reply-area">
-                                    <div class="row">
-                                        <div class="col-lg-12 col-custom">
-                                            <form action="#" class="comment-form-area">
-                                                <div class="row comment-input">
-                                                    <div class="col-md-6 col-custom comment-form-author mb-3">
-                                                        <label>Name <span class="required">*</span></label>
-                                                        <input type="text" required="required" name="Name">
-                                                    </div>
-                                                    <div class="col-md-6 col-custom comment-form-emai mb-3">
-                                                        <label>Email <span class="required">*</span></label>
-                                                        <input type="text" required="required" name="email">
-                                                    </div>
-                                                </div>
-                                                <div class="comment-form-comment mb-3">
-                                                    <label>Comment</label>
-                                                    <textarea class="comment-notes" required="required"></textarea>
-                                                </div>
-                                                <div class="comment-form-submit">
-                                                    <button class="btn flosun-button secondary-btn rounded-0">Submit</button>
-                                                </div>
-                                            </form>
+                                    <form action="#" class="comment-form-area">
+                                        <div class="row comment-input">
+                                            <div class="col-md-6 col-custom comment-form-author mb-3">
+                                                <label>Nama <span class="required">*</span></label>
+                                                <input type="text" required name="name" placeholder="Nama Anda">
+                                            </div>
+                                            <div class="col-md-6 col-custom comment-form-emai mb-3">
+                                                <label>Email <span class="required">*</span></label>
+                                                <input type="email" required name="email" placeholder="email@example.com">
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="comment-form-comment mb-3">
+                                            <label>Komentar</label>
+                                            <textarea class="comment-notes" required placeholder="Tulis ulasan Anda..."></textarea>
+                                        </div>
+                                        <div class="comment-form-submit">
+                                            <button class="btn flosun-button secondary-btn rounded-0">Kirim Ulasan</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                            <!-- End Single Content -->
-                        </div>
-                        <div class="tab-pane fade" id="connect-3" role="tabpanel" aria-labelledby="contact-tab">
-                        </div>
-                        <div class="tab-pane fade" id="connect-4" role="tabpanel" aria-labelledby="review-tab">
                         </div>
                     </div>
                 </div>
@@ -449,360 +544,276 @@
         </div>
     </div>
     <!-- Single Product Main Area End -->
-    <!--Product Area Start-->
+
+    <!-- Related Products Area Start -->
     <div class="product-area mt-text-3">
         <div class="container custom-area-2 overflow-hidden">
             <div class="row">
-                <!--Section Title Start-->
                 <div class="col-12 col-custom">
                     <div class="section-title text-center mb-30">
-                        <span class="section-title-1">The Most Trendy</span>
-                        <h3 class="section-title-3">Featured Products</h3>
+                        <span class="section-title-1">Produk Lainnya</span>
+                        <h3 class="section-title-3">Produk Unggulan</h3>
                     </div>
                 </div>
-                <!--Section Title End-->
             </div>
             <div class="row product-row">
                 <div class="col-12 col-custom">
                     <div class="product-slider swiper-container anime-element-multi">
                         <div class="swiper-wrapper">
+                            <!-- Product 1 -->
                             <div class="single-item swiper-slide">
-                                <!--Single Product Start-->
                                 <div class="single-product position-relative mb-30">
                                     <div class="product-image">
                                         <a class="d-block" href="product-details.html">
-                                            <img src="assets/images/product/1.jpg" alt="" class="product-image-1 w-100">
+                                            <img src="assets/images/product/1.jpg" alt="Jasmine Putih" class="product-image-1 w-100">
                                             <img src="assets/images/product/2.jpg" alt="" class="product-image-2 position-absolute w-100">
                                         </a>
                                         <span class="onsale">Sale!</span>
                                         <div class="add-action d-flex flex-column position-absolute">
-                                            <a href="wishlist.html" title="Add To Wishlist">
-                                                <i class="lnr lnr-heart" data-toggle="tooltip" data-placement="left" title="Wishlist"></i>
+                                            <a href="wishlist.html" title="Tambah ke Wishlist">
+                                                <i class="lnr lnr-heart"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-title">
-                                            <h4 class="title-2"> <a href="product-details.html">Jasmine Putih</a></h4>
+                                            <h4 class="title-2"><a href="product-details.html">Jasmine Putih</a></h4>
                                         </div>
                                         <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
-                                            <span class="old-price"><del>Rp 140.000</del></span>
+                                            <span class="regular-price">Rp 93.000</span>
                                         </div>
                                         <a href="cart.php" class="btn product-cart">Add to Cart</a>
                                     </div>
                                 </div>
-                                <!--Single Product End-->
                             </div>
+                            <!-- Product 2 -->
                             <div class="single-item swiper-slide">
-                                <!--Single Product Start-->
                                 <div class="single-product position-relative mb-30">
                                     <div class="product-image">
                                         <a class="d-block" href="product-details.html">
-                                            <img src="assets/images/product/5.jpg" alt="" class="product-image-1 w-100">
+                                            <img src="assets/images/product/5.jpg" alt="Buket Blossom" class="product-image-1 w-100">
                                             <img src="assets/images/product/6.jpg" alt="" class="product-image-2 position-absolute w-100">
                                         </a>
                                         <div class="add-action d-flex flex-column position-absolute">
-                                            <a href="wishlist.html" title="Add To Wishlist">
-                                                <i class="lnr lnr-heart" data-toggle="tooltip" data-placement="left" title="Wishlist"></i>
+                                            <a href="wishlist.html" title="Tambah ke Wishlist">
+                                                <i class="lnr lnr-heart"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-title">
-                                            <h4 class="title-2"> <a href="product-details.html">Buket Blossom</a></h4>
+                                            <h4 class="title-2"><a href="product-details.html">Buket Blossom</a></h4>
                                         </div>
                                         <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
+                                            <span class="regular-price">Rp 130.000</span>
                                             <span class="old-price"><del>Rp 140.000</del></span>
                                         </div>
                                         <a href="cart.php" class="btn product-cart">Add to Cart</a>
                                     </div>
                                 </div>
-                                <!--Single Product End-->
                             </div>
+                            <!-- Product 3 -->
                             <div class="single-item swiper-slide">
-                                <!--Single Product Start-->
                                 <div class="single-product position-relative mb-30">
                                     <div class="product-image">
                                         <a class="d-block" href="product-details.html">
-                                            <img src="assets/images/product/7.jpg" alt="" class="product-image-1 w-100">
+                                            <img src="assets/images/product/7.jpg" alt="Hyacinth Merah" class="product-image-1 w-100">
                                             <img src="assets/images/product/8.jpg" alt="" class="product-image-2 position-absolute w-100">
                                         </a>
                                         <div class="add-action d-flex flex-column position-absolute">
-                                            <a href="wishlist.html" title="Add To Wishlist">
-                                                <i class="lnr lnr-heart" data-toggle="tooltip" data-placement="left" title="Wishlist"></i>
+                                            <a href="wishlist.html" title="Tambah ke Wishlist">
+                                                <i class="lnr lnr-heart"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-title">
-                                            <h4 class="title-2"> <a href="product-details.html">Hyacinth Merah</a></h4>
+                                            <h4 class="title-2"><a href="product-details.html">Hyacinth Merah</a></h4>
                                         </div>
                                         <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
+                                            <span class="regular-price">Rp 130.000</span>
                                             <span class="old-price"><del>Rp 140.000</del></span>
                                         </div>
                                         <a href="cart.php" class="btn product-cart">Add to Cart</a>
                                     </div>
                                 </div>
-                                <!--Single Product End-->
                             </div>
+                            <!-- Product 4 -->
                             <div class="single-item swiper-slide">
-                                <!--Single Product Start-->
                                 <div class="single-product position-relative mb-30">
                                     <div class="product-image">
                                         <a class="d-block" href="product-details.html">
-                                            <img src="assets/images/product/3.jpg" alt="" class="product-image-1 w-100">
+                                            <img src="assets/images/product/3.jpg" alt="Daisy Merah" class="product-image-1 w-100">
                                             <img src="assets/images/product/4.jpg" alt="" class="product-image-2 position-absolute w-100">
                                         </a>
                                         <div class="add-action d-flex flex-column position-absolute">
-                                            <a href="wishlist.html" title="Add To Wishlist">
-                                                <i class="lnr lnr-heart" data-toggle="tooltip" data-placement="left" title="Wishlist"></i>
+                                            <a href="wishlist.html" title="Tambah ke Wishlist">
+                                                <i class="lnr lnr-heart"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-title">
-                                            <h4 class="title-2"> <a href="product-details.html">Daisy Merah</a></h4>
+                                            <h4 class="title-2"><a href="product-details.html">Daisy Merah</a></h4>
                                         </div>
                                         <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
-                                            <span class="old-price"><del>Rp 140.000</del></span>
+                                            <span class="regular-price">Rp 130.000</span>
                                         </div>
                                         <a href="cart.php" class="btn product-cart">Add to Cart</a>
                                     </div>
                                 </div>
-                                <!--Single Product End-->
                             </div>
+                            <!-- Product 5 -->
                             <div class="single-item swiper-slide">
-                                <!--Single Product Start-->
                                 <div class="single-product position-relative mb-30">
                                     <div class="product-image">
                                         <a class="d-block" href="product-details.html">
-                                            <img src="assets/images/product/8.jpg" alt="" class="product-image-1 w-100">
-                                            <img src="assets/images/product/7.jpg" alt="" class="product-image-2 position-absolute w-100">
-                                        </a>
-                                        <div class="add-action d-flex flex-column position-absolute">
-                                            <a href="wishlist.html" title="Add To Wishlist">
-                                                <i class="lnr lnr-heart" data-toggle="tooltip" data-placement="left" title="Wishlist"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-title">
-                                            <h4 class="title-2"> <a href="product-details.html">Hyacinth Merah</a></h4>
-                                        </div>
-                                        <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
-                                            <span class="old-price"><del>Rp 140.000</del></span>
-                                        </div>
-                                        <a href="cart.php" class="btn product-cart">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <!--Single Product End-->
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <!--Single Product Start-->
-                                <div class="single-product position-relative mb-30">
-                                    <div class="product-image">
-                                        <a class="d-block" href="product-details.html">
-                                            <img src="assets/images/product/2.jpg" alt="" class="product-image-1 w-100">
+                                            <img src="assets/images/product/2.jpg" alt="Anggrek Orange" class="product-image-1 w-100">
                                             <img src="assets/images/product/1.jpg" alt="" class="product-image-2 position-absolute w-100">
                                         </a>
                                         <div class="add-action d-flex flex-column position-absolute">
-                                            <a href="wishlist.html" title="Add To Wishlist">
-                                                <i class="lnr lnr-heart" data-toggle="tooltip" data-placement="left" title="Wishlist"></i>
+                                            <a href="wishlist.html" title="Tambah ke Wishlist">
+                                                <i class="lnr lnr-heart"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="product-content">
                                         <div class="product-title">
-                                            <h4 class="title-2"> <a href="product-details.html">Anggrek Orange</a></h4>
+                                            <h4 class="title-2"><a href="product-details.html">Anggrek Orange</a></h4>
                                         </div>
                                         <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
                                         </div>
                                         <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
-                                            <span class="old-price"><del>Rp 140.000</del></span>
+                                            <span class="regular-price">Rp 93.000</span>
                                         </div>
                                         <a href="cart.php" class="btn product-cart">Add to Cart</a>
                                     </div>
                                 </div>
-                                <!--Single Product End-->
                             </div>
                         </div>
-                        <!-- Slider pagination -->
                         <div class="swiper-pagination default-pagination"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--Product Area End-->
-    <!--Footer Area Start-->
+    <!-- Related Products Area End -->
+
+    <!-- Footer -->
+    <br>
     <footer class="footer-area">
         <div class="footer-copyright-area">
             <div class="container custom-area">
                 <div class="row">
                     <div class="col-12 text-center col-custom">
                         <div class="copyright-content">
-                            <p>Copyright © 2023 Toko Bunga Cendana</p>
+                            <p>Copyright &copy; 2023 Toko Bunga Cendana</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!--Footer Area End-->
-    <!-- Modal -->
-    <div class="modal flosun-modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close close-button" data-bs-dismiss="modal" aria-label="Close">
-                    <span class="close-icon" aria-hidden="true">x</span>
-                </button>
-                <div class="modal-body">
-                    <div class="container-fluid custom-area">
-                        <div class="row">
-                            <div class="col-md-6 col-custom">
-                                <div class="modal-product-img">
-                                    <a class="w-100" href="#">
-                                        <img class="w-100" src="assets/images/product/large-size/1.jpg" alt="Product">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-custom">
-                                <div class="modal-product">
-                                    <div class="product-content">
-                                        <div class="product-title">
-                                            <h4 class="title">Product dummy name</h4>
-                                        </div>
-                                        <div class="price-box">
-                                            <span class="regular-price ">Rp 130.000</span>
-                                            <span class="old-price"><del>Rp 140.000</del></span>
-                                        </div>
-                                        <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <span>1 Review</span>
-                                        </div>
-                                        <p class="desc-content">we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame bel...</p>
-                                        <form class="d-flex flex-column w-100" action="#">
-                                            <div class="form-group">
-                                                <select class="form-control nice-select w-100">
-                                                    <option>S</option>
-                                                    <option>M</option>
-                                                    <option>L</option>
-                                                    <option>XL</option>
-                                                    <option>XXL</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                        <div class="quantity-with-btn">
-                                            <div class="quantity">
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="0" type="text">
-                                                    <div class="dec qtybutton">-</div>
-                                                    <div class="inc qtybutton">+</div>
-                                                    <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
-                                                </div>
-                                            </div>
-                                            <div class="add-to_btn">
-                                                <a class="btn product-cart button-icon flosun-button dark-btn" href="cart.php">Add to cart</a>
-                                                <a class="btn flosun-button secondary-btn rounded-0" href="wishlist.html">Wishlist</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Scroll to Top Start -->
-    <a class="scroll-to-top" href="#">
-        <i class="lnr lnr-arrow-up"></i>
-    </a>
-    <!-- Scroll to Top End -->
+    <!-- Toast Notification -->
+    <div id="cart-toast">🛒 Produk ditambahkan ke keranjang!</div>
 
-    <!-- JS
-============================================ -->
-
-
-    <!-- jQuery JS -->
+    <!-- JS Vendors -->
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <!-- jQuery Migrate JS -->
     <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-    <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-    <!-- Bootstrap JS -->
     <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Swiper Slider JS -->
+    <!-- JS Plugins -->
     <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <!-- nice select JS -->
     <script src="assets/js/plugins/nice-select.min.js"></script>
-    <!-- Ajaxchimpt js -->
     <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
-    <!-- Jquery Ui js -->
     <script src="assets/js/plugins/jquery-ui.min.js"></script>
-    <!-- Jquery Countdown js -->
     <script src="assets/js/plugins/jquery.countdown.min.js"></script>
-    <!-- jquery magnific popup js -->
     <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
-
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Product Action Button Logic -->
+    <script>
+    (function () {
+        var PRODUCT_NAME  = 'Buket Rose Merah';
+        var PRODUCT_PRICE = 130000;
+        var WA_NUMBER     = '6281382920920';
 
+        // ── Helper: get current qty from input ──────────────────
+        function getQty() {
+            var val = parseInt($('#product-qty').val(), 10);
+            return isNaN(val) || val < 1 ? 1 : val;
+        }
+
+        // ── Helper: format Rupiah ────────────────────────────────
+        function formatRp(n) {
+            return 'Rp ' + n.toLocaleString('id-ID');
+        }
+
+        // ── Show toast ───────────────────────────────────────────
+        function showToast(msg) {
+            var $t = $('#cart-toast');
+            $t.text(msg).addClass('show');
+            setTimeout(function () { $t.removeClass('show'); }, 2500);
+        }
+
+        // ── Add to Cart button ───────────────────────────────────
+        // Shows a toast confirmation first, then navigates to cart.php
+        $('#btn-add-cart').on('click', function (e) {
+            e.preventDefault();
+            var qty   = getQty();
+            var total = formatRp(qty * PRODUCT_PRICE);
+            showToast('\uD83D\uDED2 ' + PRODUCT_NAME + ' \u00D7' + qty + ' \u2014 ' + total);
+            setTimeout(function () {
+                window.location.href = 'cart.php';
+            }, 1500);
+        });
+
+        // ── WhatsApp Direct Order button ─────────────────────────
+        $('#btn-whatsapp').on('click', function () {
+            var qty   = getQty();
+            var total = formatRp(qty * PRODUCT_PRICE);
+            var msg   = 'Halo Toko Bunga Cendana,\n\n'
+                      + 'Saya ingin memesan:\n'
+                      + '- ' + PRODUCT_NAME + ' (' + qty + 'x) = ' + total + '\n\n'
+                      + 'Mohon informasi lebih lanjut mengenai proses pembayaran dan pengiriman.\n'
+                      + 'Terima kasih!';
+            var url   = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+            window.open(url, '_blank');
+        });
+
+        // ── Wishlist button feedback ──────────────────────────────
+        $('a[href="wishlist.html"].btn-wishlist-icon').on('click', function (e) {
+            e.preventDefault();
+            var $btn = $(this);
+            $btn.find('i').removeClass('fa-heart-o').addClass('fa-heart');
+            $btn.css({ background: '#e74c3c', borderColor: '#e74c3c', color: '#fff' });
+            showToast('\u2665 ' + PRODUCT_NAME + ' ditambahkan ke Wishlist!');
+            setTimeout(function () {
+                window.location.href = 'wishlist.html';
+            }, 1600);
+        });
+
+    }());
+    </script>
 </body>
 </html>
